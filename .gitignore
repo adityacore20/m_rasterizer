@@ -1,0 +1,14 @@
+# Compiled binaries & object files
+*.o
+*.obj
+*.exe
+*.out
+
+# Build directories
+/build/
+/bin/
+/.vscode/
+/.idea/
+
+# OS-generated files
+.DS_Store

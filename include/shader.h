@@ -1,6 +1,6 @@
 #pragma once 
-#include "math.h"
 #include "Texture.h"
+#include "math_utils.h"
 #include <random>
 struct Varyings
 {

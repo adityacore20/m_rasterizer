@@ -1,7 +1,7 @@
 #pragma once 
-#include "math.h"
-#include <vector>
+#include "math_utils.h"
 #include <string>
+#include <vector>
 
 enum class Filter{Nearest,Bilinear};
 enum class Wrap{Repeat,Clamp};

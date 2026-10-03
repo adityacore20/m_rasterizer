@@ -1,7 +1,7 @@
 #pragma once 
-#include <vector>
+#include "math_utils.h"
 #include <cstdint>
-#include "math.h"
+#include <vector>
 
 class Framebuffer
 {

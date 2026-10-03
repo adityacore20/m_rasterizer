@@ -129,5 +129,6 @@ void Framebuffer::drawCircle(int cx, int cy, int r, const Color &c) {
             y--;
         }
         x++;
+        //TODO it is not completed 
     }
 }

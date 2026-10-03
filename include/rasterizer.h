@@ -1,7 +1,7 @@
 #pragma once 
-#include "math.h"
-#include "framebuffer.h"
 #include "Mesh.h"
+#include "framebuffer.h"
+#include "math_utils.h"
 #include "shader.h"
 #include <cstdint>
 #include <memory>
@@ -17,6 +17,7 @@ struct RenderState
     bool wireframe=false;
 
 };
+
 class Rasterizer
 {
     public:
@@ -29,6 +30,7 @@ class Rasterizer
             uint64_t trisSubmitted=0,trisCulled=0,trisClipped=0,trisDrawn=0;
         uint64_t pixelsTested=0,pixelsDrawn=0;
         };
+
         const Stats& stats()const{return stats_;}
         void resetState(){stats_={};}
         void printState()const;
@@ -38,9 +40,11 @@ class Rasterizer
         Stats stats_;
         Varyings processVertex(const Vertex&v,Ishader& s,const Uniforms& u);
         using VList =std::vector<Varyings>;
+
         VList clipTriangle(const Varyings& v0,const Varyings& v1,const Varyings& v2);
         VList clipAgainstPlane(const VList& poly,int plane);
         void rasterizeTriangle(Varyings a,Varyings b,Varyings c,Ishader& s,const Uniforms& u,const RenderState& rs);
+
         Vector3d ndcToScreen(const Vector3d& ndc)const;
         float edgeFn(const Vector2d& A,const Vector2d& B,const Vector2d& P)const;
         void drawLine3d(Vector3d a,Vector3d b,const Uniforms& u,Color c);
